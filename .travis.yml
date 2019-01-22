@@ -3,7 +3,7 @@ services:
   - docker
   
 before_install:
-  - docker build -t frontend/docker-react:0.3 -f Dockerfile.dev .
+  - docker build -t frontend/reactapp:0.3 -f Dockerfile.dev .
 
 script:
-  - docker run frontend/docker-react:0.3 npm run test -- --coverage
+  - docker run frontend/reactapp:0.3 npm run test -- --coverage
