@@ -1,0 +1,17 @@
+#Use base image Node:alpine
+FROM node:alpine
+
+#Set the working dir in the container
+WORKDIR /app
+
+#Copy the dependencies file to the working directory
+COPY package.json .
+
+#Install the application
+RUN npm install
+
+#Copy the source code files to the working dir
+COPY . .
+
+#Run the application
+CMD ["npm", "run", "start"]
